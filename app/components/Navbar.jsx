@@ -1,0 +1,81 @@
+"use client";
+import { UserButton } from "@clerk/nextjs";
+import { IoWallet } from "react-icons/io5";
+import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+
+function Navbar() {
+  const { open, close } = useWeb3Modal();
+  const [openMenu, setOpenMenu] = useState(false);
+  const { address, chainId, isConnected } = useWeb3ModalAccount();
+
+  return (
+    <div className="flex justify-between bg-dark text-light">
+      <div className="p-5 flex items-center">
+        <div
+          onClick={() => setOpenMenu(!openMenu)}
+          id="openModal"
+          className="sm:hidden mr-5 text-2xl cursor-pointer"
+        >
+          <GiHamburgerMenu />
+        </div>
+        <a href="/" className="text-2xl font-bold">
+          Cryptoden
+        </a>
+      </div>
+
+      {openMenu && (
+        <div className="flex flex-col p-5 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium sm:hidden">
+          <a
+            href="/nft"
+            className="bg-modalGray p-2 rounded-lg border border-gray"
+          >
+            NFT
+          </a>
+          <a
+            href="/owned"
+            className="bg-modalGray p-2 rounded-lg border border-gray"
+          >
+            Owned
+          </a>
+          <a
+            href="/news"
+            className="bg-modalGray p-2 rounded-lg border border-gray"
+          >
+            News
+          </a>
+          <a
+            href="/help"
+            className="bg-modalGray p-2 rounded-lg border border-gray"
+          >
+            Help
+          </a>
+        </div>
+      )}
+
+      <div className="hidden sm:block p-5 space-x-10 text-lg font-medium">
+        <a href="/nft">NFT</a>
+        <a href="/nft">Owned</a>
+        <a href="/news">News</a>
+        <a href="/help">Help</a>
+      </div>
+
+      <div className="flex items-center">
+        <button
+          onClick={() => open()}
+          className={`pl-16 py-5 text-2xl ${
+            isConnected ? "text-blue" : "text-light"
+          }`}
+        >
+          <IoWallet />
+        </button>
+        <button className="p-5 pt-3">
+          <UserButton afterSignOutUrl="/" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;
