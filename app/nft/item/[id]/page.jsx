@@ -69,6 +69,15 @@ export default function Item() {
         signer = await provider.getSigner();
       }
 
+      const wei = price * 1000;
+      const weiPrice = BigInt(wei) * 1000000000000000n;
+      const balance = await provider.getBalance(address);
+      if (isConnected && balance < weiPrice) {
+        toast.error("Insufficient funds");
+        console.log("Insufficient funds");
+        return;
+      }
+
       await window.ethereum.request({ method: "eth_requestAccounts" });
       const transactionResponse = await signer.sendTransaction({
         to: "0xC588503530301B75a9E4B6F787C62dF943130767",
@@ -79,7 +88,7 @@ export default function Item() {
       if (!isConnected) {
         toast.error("Wallet not connected");
       } else {
-        toast.error("Insufficient funds");
+        toast.error("Transaction rejected");
       }
       console.log(`${err}`);
     }
