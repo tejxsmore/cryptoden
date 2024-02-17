@@ -53,6 +53,10 @@ export default function Item() {
   }
 
   const handleBuy = async () => {
+    if (!isConnected) {
+      toast.error("Wallet not connected");
+      return;
+    }
     console.log(
       `From : ${address}, \nTo : "0xC588503530301B75a9E4B6F787C62dF943130767", \namount: ${price} ETH`
     );
@@ -69,8 +73,8 @@ export default function Item() {
         signer = await provider.getSigner();
       }
 
-      const wei = price * 1000;
-      const weiPrice = BigInt(wei) * 1000000000000000n;
+      const wei = price * 1000000;
+      const weiPrice = BigInt(wei) * 1000000000000n;
       const balance = await provider.getBalance(address);
       if (isConnected && balance < weiPrice) {
         toast.error("Insufficient funds");
@@ -84,12 +88,9 @@ export default function Item() {
         value: ethers.parseEther(price.toString()),
       });
       toast.success(`Transaction Successful`);
+      console.log(`Successfully sent ${price} ETH`);
     } catch (err) {
-      if (!isConnected) {
-        toast.error("Wallet not connected");
-      } else {
-        toast.error("Transaction rejected");
-      }
+      toast.error("Transaction rejected");
       console.log(`${err}`);
     }
   };
