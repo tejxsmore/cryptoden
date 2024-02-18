@@ -73,6 +73,7 @@ export default function Item() {
         signer = await provider.getSigner();
       }
 
+      // Insufficient balance
       const wei = price * 1000000;
       const weiPrice = BigInt(wei) * 1000000000000n;
       const balance = await provider.getBalance(address);
@@ -97,14 +98,14 @@ export default function Item() {
 
   return (
     <div>
-      <div className="p-5 bg-dark text-white text-2xl sm:py-12">
-        <div className="sm:flex">
-          <div className="sm:mr-10 rounded-xl sm:w-1/2 sm:mb-14">
+      <div className="p-5 bg-dark text-white text-2xl sm:py-12 min-h-screen">
+        <div className="md:flex">
+          <div className="md:mr-10 rounded-xl md:w-1/2 sm:mb-14">
             <div className="bg-modalGray  rounded-t-xl p-2.5">
               <FaEthereum className="text-light text-xl" />
             </div>
 
-            <img src={img} alt={price} className="rounded-b-xl" />
+            <img src={img} alt={price} className="rounded-b-xl w-full" />
           </div>
           <div className="w-full">
             <Link href={link}>

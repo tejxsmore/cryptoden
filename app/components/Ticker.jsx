@@ -15,10 +15,22 @@ export default async function Ticker() {
     const data = await res.json();
     return (
       <div className="bg-dark">
-        <h1 className="p-5 items-center text-md text-light font-medium">
-          Market{" "}
-          <span className="px-5 text-sm font-normal">{data.length} assets</span>
-        </h1>
+        <div className="px-5 text-md font-normal">
+          <div className="flex justify-between border-b border-gray py-5">
+            <p className="">
+              Assets{" "}
+              <span className="text-sm font-normal text-gray">
+                ({data.length})
+              </span>
+            </p>
+            <p className="hidden sm:block">24h Low</p>
+            <p className="hidden sm:block">24h High</p>
+            <p className="pr-2 pl-10">
+              Price{" "}
+              <span className="text-sm font-normal text-gray pl-5">Change</span>
+            </p>
+          </div>
+        </div>
         <div className="pb-5">
           {data.slice(0, 20).map((coin, i, data) => (
             <CoinCard

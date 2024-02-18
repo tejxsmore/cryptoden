@@ -42,7 +42,7 @@ export default function Depth({ coin }) {
             >
               <div className="flex justify-between">
                 <p>{item[1]}</p>
-                <p className="font-normal">{item[0]}</p>
+                <p className="font-normal text-green">{item[0]}</p>
               </div>
             </div>
           ))}
@@ -55,7 +55,7 @@ export default function Depth({ coin }) {
               className="border-b border-gray pr-5 pl-2.5 py-1"
             >
               <div className="flex justify-between">
-                <p className="font-normal">{item[0]}</p>
+                <p className="font-normal text-red">{item[0]}</p>
                 <p>{item[1]}</p>
               </div>
             </div>

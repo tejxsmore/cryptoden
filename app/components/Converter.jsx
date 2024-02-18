@@ -1,23 +1,16 @@
-// import useSWR from "swr";
 import { MdOutlineSwapVert } from "react-icons/md";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { LuExternalLink } from "react-icons/lu";
 
 // import Confetti from "react-confetti";
-// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Converter({ coin, price }) {
   const { address, isConnected } = useWeb3ModalAccount();
 
-  // const { swapData } = useSWR(
-  //   `https://api.wazirx.com/sapi/v1/ticker/24hr?symbol=btcinr`,
-  //   fetcher
-  // );
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const number = document.getElementById("number");
-    const ogPrice = (Number(number.value) * price) / 4224747;
+    const ogPrice = (Number(number.value) * price) / 4491000;
     document.getElementById("state").value = ogPrice.toFixed(3);
   };
 

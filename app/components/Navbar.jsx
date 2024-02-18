@@ -26,7 +26,7 @@ function Navbar() {
       </div>
 
       {openMenu && (
-        <div className="flex flex-col p-5 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium sm:hidden">
+        <div className="flex flex-col p-5 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium md:hidden">
           <a
             href="/nft"
             className="bg-modalGray p-2 rounded-lg border border-gray"
