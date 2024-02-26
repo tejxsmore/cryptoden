@@ -27,12 +27,12 @@ export default async function Ticker() {
             <p className="hidden sm:block">24h High</p>
             <p className="pr-2 pl-10">
               Price{" "}
-              <span className="text-sm font-normal text-gray pl-5">Change</span>
+              <span className="text-sm font-normal text-gray pl-4">Change</span>
             </p>
           </div>
         </div>
         <div className="pb-5">
-          {data.slice(0, 20).map((coin, i, data) => (
+          {data.map((coin, i, data) => (
             <CoinCard
               key={coin.symbol}
               len={data.length}

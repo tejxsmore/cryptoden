@@ -17,7 +17,7 @@ import { photoStore } from "@/public/store/photoStore";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Item() {
-  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  const { address, isConnected } = useWeb3ModalAccount();
   const { data } = useSWR(
     `https://api.wazirx.com/sapi/v1/ticker/24hr?symbol=ethinr`,
     fetcher
@@ -57,9 +57,6 @@ export default function Item() {
       toast.error("Wallet not connected");
       return;
     }
-    console.log(
-      `From : ${address}, \nTo : "0xC588503530301B75a9E4B6F787C62dF943130767", \namount: ${price} ETH`
-    );
 
     try {
       let signer = null;
@@ -88,8 +85,9 @@ export default function Item() {
         to: "0xC588503530301B75a9E4B6F787C62dF943130767",
         value: ethers.parseEther(price.toString()),
       });
+      console.log(`Title : ${title} #${id + 1001}`);
+      console.log(`Successfully bought an NFT worth ${price} ETH`);
       toast.success(`Transaction Successful`);
-      console.log(`Successfully sent ${price} ETH`);
     } catch (err) {
       toast.error("Transaction rejected");
       console.log(`${err}`);

@@ -64,13 +64,13 @@ function Navbar() {
       <div className="flex items-center">
         <button
           onClick={() => open()}
-          className={`pl-16 py-5 text-2xl ${
+          className={`ml-16 my-5 text-2xl ${
             isConnected ? "text-blue" : "text-light"
           }`}
         >
           <IoWallet />
         </button>
-        <button className="p-5 pt-3">
+        <button className="m-5 mt-3">
           <UserButton afterSignOutUrl="/" />
         </button>
       </div>
