@@ -16,7 +16,7 @@ export default async function Ticker() {
     return (
       <div className="bg-dark">
         <div className="px-5 text-md font-normal">
-          <div className="flex justify-between border-b border-gray py-5">
+          <div className="flex justify-between py-5">
             <p className="">
               Assets{" "}
               <span className="text-sm font-normal text-gray">
@@ -31,7 +31,7 @@ export default async function Ticker() {
             </p>
           </div>
         </div>
-        <div className="pb-5">
+        <div className="">
           {data.map((coin, i, data) => (
             <CoinCard
               key={coin.symbol}

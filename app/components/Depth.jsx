@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import "./Depth.css";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -18,7 +17,7 @@ export default function Depth({ coin }) {
   if (isLoading)
     return <div className="bg-dark text-light min-h-screen p-5">Loading</div>;
   return (
-    <div className="bg-dark text-light lg:w-1/2">
+    <div className="bg-dark text-light lg:w-1/2 pb-5">
       <h3 className="py-5 text-md font-medium">
         Order book <span className="text-gray text-sm font-normal"> (20) </span>
       </h3>

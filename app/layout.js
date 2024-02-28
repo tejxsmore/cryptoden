@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Navbar from "../app/components/Navbar";
+import Footer from "../app/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Web3Modal, Web3ModalProvider } from "../context/Web3Modal";
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
           <Web3ModalProvider>
             <Navbar />
             {children}
+            <Footer />
           </Web3ModalProvider>
         </body>
       </html>

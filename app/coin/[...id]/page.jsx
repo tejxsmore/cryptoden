@@ -58,10 +58,10 @@ export default function App() {
         <Converter coin={data.baseAsset} price={data.openPrice} />
         <Depth coin={coin} />
       </div>
-      <div className="sticky bottom-0 flex bg-dark space-x-5 py-5">
+      {/* <div className="sticky bottom-0 flex bg-dark space-x-5 py-5">
         <button className="bg-green w-1/2 rounded-lg py-2.5">Buy</button>
         <button className="bg-red w-1/2 rounded-lg py-2.5">Sell</button>
-      </div>
+      </div> */}
     </div>
   );
 }
