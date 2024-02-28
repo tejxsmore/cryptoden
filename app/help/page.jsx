@@ -17,13 +17,13 @@ export default function page() {
           className="text-md font-medium p-5 mb-1 outline-none bg-modalGray rounded-xl border border-gray"
         >
           <p className="text-sm font-normal py-2.5 pb-0">
-            Cryptocurrency is a digital or virtual currency that uses
+            {`Cryptocurrency is a digital or virtual currency that uses
             cryptography to secure transactions and to control the creation of
             new units. It is decentralized, meaning it is not issued by any
             central authority and operates on a distributed ledger enforced by
             blockchain technology. Cryptocurrencies can be used to buy goods and
             services, but most people invest in them as they would in other
-            assets, like stocks or precious metals.
+            assets, like stocks or precious metals.`}
           </p>
         </AccordionItem>
         <AccordionItem

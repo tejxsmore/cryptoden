@@ -1,13 +1,16 @@
-import Art from "../../components/elements/Art";
 import Link from "next/link";
+import Leaderboard from "../../components/elements/Leaderboard";
+import Art from "../../components/elements/Art";
 
 export default function ArtComp() {
   return (
-    <div className="sm:h-screen bg-slate-900">
-      <Link href="/nft/art">
-        <h3 className="p-5 bg-dark text-light text-md font-medium">
-          Trending in Art
-        </h3>
+    <div className="min-h-screen bg-dark">
+      <Leaderboard item="art" />
+      <Link
+        href="/nft/art"
+        className="p-5 bg-dark text-light text-md font-medium"
+      >
+        Trending in Art
       </Link>
       <Art />
     </div>

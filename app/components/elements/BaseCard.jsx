@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ArtCard({ id, type, title, img, floor, vol }) {

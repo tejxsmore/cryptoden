@@ -10,7 +10,7 @@ export default function ArtId() {
 
   return (
     <div>
-      <div className="p-5 pb-0 bg-dark flex flex-wrap ">
+      <div className="p-5 pb-0 bg-dark flex flex-wrap min-h-screen">
         {gamepiece.map((game) => (
           <Card
             key={game.id}

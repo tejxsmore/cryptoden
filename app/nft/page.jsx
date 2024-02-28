@@ -5,23 +5,26 @@ import Photography from "../components/elements/Photography";
 
 export default function Home() {
   return (
-    <div>
-      <Link href="/nft/art">
-        <h3 className="p-5 bg-dark text-light text-md font-medium">
-          Trending in Art
-        </h3>
+    <div className="bg-dark min-h-screen">
+      <Link
+        href="/nft/art"
+        className="p-5 bg-dark text-light text-md font-medium"
+      >
+        Art
       </Link>
       <Art />
-      <Link href="/nft/game">
-        <h3 className="p-5 bg-dark text-light text-md font-medium">
-          Trending in Gaming
-        </h3>
+      <Link
+        href="/nft/game"
+        className="p-5 bg-dark text-light text-md font-medium"
+      >
+        Gaming
       </Link>
       <Gaming />
-      <Link href="/nft/photo">
-        <h3 className="p-5 bg-dark text-light text-md font-medium">
-          Trending in Photography
-        </h3>
+      <Link
+        href="/nft/photo"
+        className="p-5 bg-dark text-light text-md font-medium"
+      >
+        Photography
       </Link>
       <Photography />
     </div>

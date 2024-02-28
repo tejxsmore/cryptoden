@@ -26,7 +26,7 @@ export default function App() {
   if (isLoading)
     return <div className="bg-dark text-light min-h-screen p-5">Loading</div>;
   return (
-    <div className="bg-dark text-light p-5 pb-0">
+    <div className="bg-dark text-light p-5 pb-0 min-h-screen">
       <div className="flex justify-between border border-gray bg-modalGray px-4 py-2 rounded-lg">
         <p className="flex flex-col text-sm font-normal text-gray text-center">
           Volume ({data.baseAsset.toUpperCase()})

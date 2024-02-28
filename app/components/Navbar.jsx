@@ -56,7 +56,7 @@ function Navbar() {
 
       <div className="hidden sm:block p-5 space-x-10 text-lg font-medium">
         <a href="/nft">NFT</a>
-        <a href="/nft">Owned</a>
+        <a href="/owned">Owned</a>
         <a href="/news">News</a>
         <a href="/help">Help</a>
       </div>
