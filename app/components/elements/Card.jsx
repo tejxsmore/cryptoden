@@ -5,7 +5,7 @@ export default function Card({ id, pid, price, img }) {
   return (
     <Link
       href={`/nft/item/${id}`}
-      className="mb-5 sm:mr-5 w-full sm:w-[150px] md:w-[294px] lg:w-[354px]"
+      className="mb-5 sm:mr-5 w-full sm:w-[285px] lg:w-[340px]"
     >
       <div className="bg-modalGray rounded-xl text-white">
         <img src={img} alt={price} className="rounded-t-xl w-full" />

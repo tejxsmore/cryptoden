@@ -6,8 +6,8 @@ body,
 html {
   margin: 0;
   padding: 0;
-  background-color: #18122b;
-  color: #ecf2ff;
+  background-color: #191919;
+  color: #f4f4f4;
 }
 
 ::-webkit-scrollbar {

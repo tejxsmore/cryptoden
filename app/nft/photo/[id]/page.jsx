@@ -9,7 +9,7 @@ export default function ArtId() {
   const photopiece = photoStore.data[id].subitems;
 
   return (
-    <div className="p-5 pb-0 bg-dark flex flex-wrap min-h-screen">
+    <div className="p-5 pb-0 bg-dark flex flex-wrap justify-center min-h-screen">
       {photopiece.map((photo) => (
         <Card
           key={photo.id}

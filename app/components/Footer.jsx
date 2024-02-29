@@ -17,20 +17,20 @@ export default function Footer() {
           </p>
           <Newsletter />
           <div className="flex gap-x-5">
-            <a href="https://github.com/tejxsmore">
+            <a href="https://github.com/tejxsmore" target="_blank">
               <FaGithub className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com/in/tejxsmore">
+            <a href="https://linkedin.com/in/tejxsmore" target="_blank">
               <IoLogoLinkedin className="w-6 h-6" />
             </a>
-            <a href="https://instagram.com/tejxsmore">
+            <a href="https://instagram.com/tejxsmore" target="_blank">
               <FaInstagram className="w-6 h-6" />
             </a>
           </div>
         </div>
         <div className="md:w-1/3 p-5">
           <h5 className="text-xl font-bold pb-5">Navigate</h5>
-          <div className="flex flex-col text-gray space-y-2.5">
+          <div className="flex flex-col text-light space-y-2.5">
             <a href="/" className="hover:text-blue">
               Home
             </a>

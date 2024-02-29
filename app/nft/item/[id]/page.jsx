@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { usePathname } from "next/navigation";
 import { FaEthereum } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
-import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
 import { itemstore } from "@/public/store/itemstore";
 import { artStore } from "@/public/store/artStore";
@@ -96,43 +96,60 @@ export default function Item() {
 
   return (
     <div>
-      <div className="p-5 bg-dark text-white text-2xl sm:py-12 min-h-screen">
+      <div className="p-5 bg-dark text-white text-2xl pt-10">
         <div className="md:flex">
-          <div className="md:mr-10 rounded-xl md:w-1/2 sm:mb-14">
+          <div className="md:mr-5 rounded-xl md:w-1/2 sm:mb-14">
             <div className="bg-modalGray  rounded-t-xl p-2.5">
               <FaEthereum className="text-light text-xl" />
             </div>
 
             <img src={img} alt={price} className="rounded-b-xl w-full" />
           </div>
-          <div className="w-full">
+          <div className="w-full ">
             <Link href={link}>
-              <div className="py-10 sm:pt-0 font-bold text-4xl">
+              <div className="py-5 sm:pt-0 font-bold text-4xl">
                 {title} #{id + 1001}
               </div>
             </Link>
-            <div className="sm:flex w-full sm:space-x-5 font-bold">
-              <div className="bg-modalGray p-5 rounded-xl sm:w-1/2 w-full sm:mb-0 mb-4">
-                {price} ETH
-              </div>
-              <div className="bg-modalGray p-5 rounded-xl sm:w-1/2 w-full">
-                {INRupee.format(Number(inr).toFixed(2))}
-              </div>
+            <div className="bg-modalGray border border-b-0 border-gray rounded-t-2xl px-5 py-5">
+              <p className="text-md font-medium">Sale ends in</p>
             </div>
-            <div
-              onClick={handleBuy}
-              className="bg-blue hover:opacity-90 p-5 rounded-xl mt-5 text-center font-bold cursor-pointer"
-            >
-              Buy Now
+            <div className="bg-modalGray p-5 border border-gray rounded-b-2xl">
+              <p className="mb-5 text-md font-medium">Current price</p>
+              <div className="sm:flex w-full sm:space-x-5 font-bold">
+                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full sm:mb-0 mb-5">
+                  {price} ETH
+                </div>
+                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full">
+                  {INRupee.format(Number(inr).toFixed(2))}
+                </div>
+              </div>
+              <div className="sm:flex mt-5 w-full sm:space-x-5 font-bold">
+                <div
+                  onClick={handleBuy}
+                  className="bg-blue hover:opacity-90 p-5 rounded-xl text-center font-bold cursor-pointer sm:w-1/2 w-full sm:mb-0 mb-5"
+                >
+                  Buy Now
+                </div>
+                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full text-center font-bold cursor-pointer">
+                  Make an offer
+                </div>
+              </div>
             </div>
             <div className="text-sm font-normal">
               <Toaster position="top-center" reverseOrder={false} />
             </div>
-            <div className="text-white py-10 rounded-xl font-md text-lg">
+            <div className="text-white mt-5 p-5 bg-modalGray border border-gray rounded-xl font-md text-lg">
               <p className="pb-4">By {title},</p>
               <p className="text-justify">{description}</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="p-5 pt-0 bg-dark">
+        <div className="bg-modalGray border border-gray rounded-2xl">
+          <p className="p-5 border-b border-gray">More from this collection</p>
+          <div className="p-5">NFTs</div>
         </div>
       </div>
     </div>
