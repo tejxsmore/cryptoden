@@ -48,12 +48,12 @@ export default function Item() {
     currency: "INR",
   });
 
-  if (id < 95) {
+  if (id <= 95) {
     title = artStore.data[pid].title;
     description = artStore.data[pid].description;
     link = `/nft/art/${pid}`;
     subitems = artStore.data[pid].subitems;
-  } else if (id < 191) {
+  } else if (id <= 191) {
     title = gameStore.data[pid].title;
     description = gameStore.data[pid].description;
     link = `/nft/game/${pid}`;
@@ -155,7 +155,7 @@ export default function Item() {
           </div>
           <div className="w-full md:w-2/3">
             <Link href={link}>
-              <div className="py-10 md:pt-0 font-bold text-3xl">
+              <div className="my-10 md:mt-0 font-bold text-3xl">
                 {title} #{id + 1001}
               </div>
             </Link>
@@ -170,26 +170,26 @@ export default function Item() {
             <div className="bg-modalGray p-5 border border-gray rounded-b-2xl">
               <p className="pb-5 text-md ">Current price</p>
               <div className="sm:flex w-full sm:space-x-5 text-2xl font-bold">
-                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full sm:mb-0 mb-5 text-center">
+                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full sm:mb-0 mb-5">
                   {price} ETH
                 </div>
-                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full text-center">
+                <div className="bg-dark p-5 rounded-xl sm:w-1/2 w-full">
                   {INRupee.format(Number(inr).toFixed(2))}
                 </div>
               </div>
-              <div className="sm:flex mt-5 w-full sm:space-x-5 text-2xl font-bold">
+              <div className="mt-5 w-full text-2xl font-bold">
                 <div
                   onClick={handleBuy}
-                  className="bg-blue hover:opacity-90 p-5 rounded-xl text-center font-bold cursor-pointer sm:w-1/2 w-full sm:mb-0 mb-5"
+                  className="bg-blue hover:opacity-90 p-5 rounded-xl text-center font-bold cursor-pointer w-full "
                 >
                   Buy Now
                 </div>
-                <div
+                {/* <div
                   onClick={makeOffer}
-                  className="bg-dark p-5 rounded-xl sm:w-1/2 w-full text-center font-bold cursor-pointer"
+                  className="bg-blue hover:opacity-90 p-5 rounded-xl text-center font-bold cursor-pointer sm:w-1/2 w-full sm:mb-0 mb-5"
                 >
                   Make an offer
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="text-sm font-normal">
@@ -203,14 +203,16 @@ export default function Item() {
         </div>
       </div>
       <div className="p-5 pt-0 bg-dark">
-        <div className="bg-modalGray border border-gray rounded-2xl">
-          <p className="p-5 border-b border-gray">More from this collection</p>
+        <div className="bg-dark border border-gray rounded-2xl">
+          <p className="p-5 bg-modalGray border-b border-gray rounded-t-2xl">
+            More from this collection
+          </p>
           <div className="m-5 space-x-5 overflow-x-auto overflow-y-hidden whitespace-nowrap">
             {subitems.map((nft) => (
               <a
                 href={`/nft/item/${nft.id}`}
                 key={nft.id}
-                className="inline-block w-56 sm:w-80 bg-dark rounded-xl"
+                className="inline-block w-56 sm:w-80 bg-modalGray rounded-xl"
               >
                 <img src={nft.img} alt={nft.id} className="rounded-t-xl" />
                 <div

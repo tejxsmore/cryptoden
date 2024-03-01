@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "../app/components/Navbar";
 import Footer from "../app/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Web3Modal, Web3ModalProvider } from "../context/Web3Modal";
+import { Web3ModalProvider } from "../context/Web3Modal";
 
 export const metadata = {
   title: "Cryptoden",
