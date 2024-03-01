@@ -26,28 +26,28 @@ function Navbar() {
       </div>
 
       {openMenu && (
-        <div className="flex flex-col p-5 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium md:hidden">
+        <div className="flex flex-col p-5 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium md:hidden h-screen">
           <a
             href="/nft"
-            className="bg-modalGray p-2 rounded-lg border border-gray"
+            className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             NFT
           </a>
           <a
             href="/owned"
-            className="bg-modalGray p-2 rounded-lg border border-gray"
+            className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             Owned
           </a>
           <a
             href="/news"
-            className="bg-modalGray p-2 rounded-lg border border-gray"
+            className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             News
           </a>
           <a
             href="/help"
-            className="bg-modalGray p-2 rounded-lg border border-gray"
+            className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             Help
           </a>

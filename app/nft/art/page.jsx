@@ -4,7 +4,7 @@ import Art from "../../components/elements/Art";
 
 export default function ArtComp() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="pt-5 min-h-screen bg-dark">
       <Leaderboard item="art" />
       <Link
         href="/nft/art"

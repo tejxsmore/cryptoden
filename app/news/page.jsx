@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 export default async function News() {
@@ -14,13 +15,20 @@ export default async function News() {
     const data = await res.json();
     return (
       <div className="bg-dark text-light min-h-screen p-5">
-        <h2 className="text-md font-medium pb-5">Crypto news</h2>
+        <h2 className="text-md font-medium pb-2.5">Crypto news</h2>
         <div className="">
-          {data.articles.slice(0, 10).map((item) => (
+          {data.articles.slice(0, 20).map((item) => (
             <a key={item.url} href={item.url}>
-              <div className="bg-modalGray border border-gray rounded-lg p-5 mt-1">
-                <h3 className="text-md font-md pb-2">{item.title}</h3>
-                <p className="text-sm font-normal">{item.content}</p>
+              <div className="bg-modalGray border border-gray rounded-xl p-5 mt-2.5 sm:flex">
+                <img
+                  src={item.urlToImage}
+                  alt="Image"
+                  className="rounded-lg w-full mb-5 sm:mb-0 sm:w-1/3"
+                />
+                <div className="sm:w-2/3 sm:ml-5">
+                  <h3 className="text-md font-medium pb-5">{item.title}</h3>
+                  <p className="text-sm font-normal">{item.content}</p>
+                </div>
               </div>
             </a>
           ))}

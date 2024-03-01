@@ -5,7 +5,7 @@ import Photography from "../components/elements/Photography";
 
 export default function Home() {
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="bg-dark min-h-screen pt-5">
       <Link
         href="/nft/art"
         className="p-5 bg-dark text-light text-md font-medium"

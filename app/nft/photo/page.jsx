@@ -4,7 +4,7 @@ import Photography from "../../components/elements/Photography";
 
 export default function ArtComp() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="pt-5 min-h-screen bg-dark">
       <Leaderboard item="photo" />
       <Link
         href="/nft/photo"

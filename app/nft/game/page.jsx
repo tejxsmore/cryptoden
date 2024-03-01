@@ -4,7 +4,7 @@ import Gaming from "../../components/elements/Gaming";
 
 export default function ArtComp() {
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="pt-5 min-h-screen bg-dark">
       <Leaderboard item="game" />
       <Link
         href="/nft/game"
