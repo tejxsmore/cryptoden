@@ -30,7 +30,8 @@
     "context/web3Modal.jsx",
     "app/layout.jts",
     "app/layout.js",
-    "app/components/Ticker.jsx"
+    "app/components/Ticker.jsx",
+    "app/components/Support.jsx"
   ],
   "exclude": ["node_modules"]
 }

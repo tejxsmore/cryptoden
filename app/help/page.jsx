@@ -1,23 +1,12 @@
 "use client";
-import Newsletter from "../components/Newsletter";
+import Support from "../components/Support";
 import { AnchorIcon } from "./AnchorIcon";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
 export default function Help() {
   return (
     <div className="bg-dark p-5 min-h-screen">
-      <div className="flex justify-center pb-20">
-        <div className="w-full sm:max-w-lg bg-modalGray border border-gray p-5 rounded-xl pb-0">
-          <h3 className="pb-5 text-2xl font-bold">We are here to help you!</h3>
-          <p className="pb-5">
-            Cryptoden is a decentralised platform for trading and buying or
-            selling NFTs. We work very hard to help our customers with upto date
-            service, if you need any support from our team, feel free to mail
-            us.
-          </p>
-          <Newsletter />
-        </div>
-      </div>
+      <Support />
       <p className="pb-5 text-md font-medium">
         Frequently asked questions (FAQs)
       </p>
