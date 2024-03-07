@@ -1,7 +1,12 @@
 export default function Owned() {
   return (
-    <div className="bg-dark p-5 min-h-screen">
-      <p>{`You haven't bought any NFT's yet`}</p>
+    <div className="bg-dark text-light flex justify-center items-center min-h-screen p-5">
+      <a
+        href="/nft"
+        className="px-5 py-2 bg-modalGray border border-gray rounded-lg"
+      >
+        {`Buy your first NFT right now`}
+      </a>
     </div>
   );
 }

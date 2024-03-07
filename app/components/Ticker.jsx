@@ -23,8 +23,8 @@ export default async function Ticker() {
                 ({data.length})
               </span>
             </p>
-            <p className="hidden sm:block">24h Low</p>
-            <p className="hidden sm:block">24h High</p>
+            <p className="hidden md:block">24h Low</p>
+            <p className="hidden md:block">24h High</p>
             <p className="pr-2 pl-10">
               Price{" "}
               <span className="text-sm font-normal text-gray pl-4">Change</span>

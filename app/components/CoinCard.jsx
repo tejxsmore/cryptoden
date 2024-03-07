@@ -22,10 +22,14 @@ export default function CoinCard({ symbol, asset, open, last, low, high }) {
         </a>
       </div>
 
-      <p className="hidden sm:block sm:w-1/4">{INRupee.format(low)}</p>
-      <p className="hidden sm:block sm:w-1/4">{INRupee.format(high)}</p>
+      <a href={`/coin/${symbol}`} className="hidden md:block sm:w-1/4">
+        {INRupee.format(low)}
+      </a>
+      <a href={`/coin/${symbol}`} className="hidden md:block sm:w-1/4">
+        {INRupee.format(high)}
+      </a>
 
-      <div className="flex">
+      <a href={`/coin/${symbol}`} className="flex">
         <p className="mr-5 text-md font-medium">{INRupee.format(open)}</p>
         <button
           className={`${
@@ -34,7 +38,7 @@ export default function CoinCard({ symbol, asset, open, last, low, high }) {
         >
           {change.toFixed(2)} %
         </button>
-      </div>
+      </a>
     </div>
   );
 }

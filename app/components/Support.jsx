@@ -1,9 +1,14 @@
-import * as React from "react";
+"use client";
 
 export default function Support() {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(document.getElementById("email").value);
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+
+    console.log(`${name} (${email}) : ${subject}`);
   };
 
   return (
@@ -15,17 +20,33 @@ export default function Support() {
           selling NFTs. We work very hard to help our customers with upto date
           service, if you need any support from our team, feel free to mail us.
         </p>
-        <form onSubmit={handleSubmit} className="flex mb-5">
-          <input
+        <form onSubmit={handleSubmit} className="mb-5 text-light">
+          <div className="flex mb-5 space-x-5">
+            <input
+              required
+              id="name"
+              type="text"
+              placeholder="Name"
+              className="w-full bg-dark border border-gray rounded-lg p-2 focus:outline-none"
+            />
+            <input
+              required
+              id="email"
+              type="email"
+              placeholder="Email"
+              className="w-full bg-dark border border-gray rounded-lg p-2 focus:outline-none"
+            />
+          </div>
+          <textarea
             required
-            id="email"
-            type="email"
-            placeholder="Email"
-            className="w-full bg-dark border border-gray rounded-lg p-2 focus:outline-none"
-          />
+            id="subject"
+            rows="10"
+            placeholder="Subject"
+            className="w-full bg-dark border border-gray rounded-lg p-2 mb-4 focus:outline-none"
+          ></textarea>
           <button
             type="submit"
-            className="bg-gray hover:bg-blue text-md font-medium px-5 py-2 ml-5 rounded-lg"
+            className="w-full bg-gray hover:bg-blue text-md font-medium px-5 py-2 rounded-lg"
           >
             Submit
           </button>

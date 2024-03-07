@@ -1,4 +1,6 @@
 import "./globals.css";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 import Navbar from "../app/components/Navbar";
 import Footer from "../app/components/Footer";
@@ -13,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className={GeistSans.className}>
         <body>
           <Web3ModalProvider>
             <Navbar />

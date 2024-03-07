@@ -19,12 +19,23 @@ export default function App() {
 
   if (error)
     return (
-      <div className="bg-dark text-light min-h-screen p-5">
-        An error has occurred
+      <div className="bg-dark text-light flex justify-center items-center min-h-screen p-5">
+        <a
+          href="/"
+          className="px-5 py-2 bg-modalGray border border-red rounded-lg"
+        >
+          Something went wrong!
+        </a>
       </div>
     );
   if (isLoading)
-    return <div className="bg-dark text-light min-h-screen p-5">Loading</div>;
+    return (
+      <div className="bg-dark text-light flex justify-center items-center min-h-screen p-5">
+        <div className="px-5 py-2 bg-modalGray border border-gray rounded-lg">
+          Loading...
+        </div>
+      </div>
+    );
   return (
     <div className="bg-dark text-light p-5 pb-0 min-h-screen">
       <div className="flex justify-between border border-gray bg-modalGray px-4 py-2 rounded-lg">
