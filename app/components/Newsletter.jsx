@@ -1,7 +1,3 @@
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-
-const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
-
 export default function Newsletter() {
   const handleSubmit = async (e) => {
     e.preventDefault();

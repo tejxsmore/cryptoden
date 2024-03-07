@@ -2,7 +2,8 @@
 import { UserButton } from "@clerk/nextjs";
 import { IoWallet } from "react-icons/io5";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMenu } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 
 function Navbar() {
@@ -16,9 +17,9 @@ function Navbar() {
         <div
           onClick={() => setOpenMenu(!openMenu)}
           id="openModal"
-          className="sm:hidden mr-5 text-2xl cursor-pointer"
+          className="sm:hidden mr-5 text-3xl cursor-pointer"
         >
-          <GiHamburgerMenu />
+          {!openMenu ? <IoMenu /> : <IoClose />}
         </div>
         <a href="/" className="text-2xl font-bold">
           Cryptoden
