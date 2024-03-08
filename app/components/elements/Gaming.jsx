@@ -1,4 +1,4 @@
-import { gameStore } from "@/public/store/gameStore";
+import { gameStore } from "../../../public/store/gameStore";
 import BaseCard from "./BaseCard";
 
 export default function Gaming() {

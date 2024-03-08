@@ -1,4 +1,4 @@
-import { artStore } from "@/public/store/artStore";
+import { artStore } from "../../../public/store/artStore";
 import BaseCard from "./BaseCard";
 
 export default function Art() {

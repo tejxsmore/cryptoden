@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { photoStore } from "@/public/store/photoStore";
-import Card from "@/app/components/elements/Card";
+import { photoStore } from "../../../../public/store/photoStore";
+import Card from "../../../components/elements/Card";
 
 export default function ArtId() {
   const path = usePathname();

@@ -71,7 +71,7 @@ function Navbar() {
         >
           <IoWallet />
         </button>
-        <button className="m-5 mt-3">
+        <button className="m-5 mt-2.5">
           <UserButton afterSignOutUrl="/" />
         </button>
       </div>

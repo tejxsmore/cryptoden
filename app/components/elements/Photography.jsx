@@ -1,4 +1,4 @@
-import { photoStore } from "@/public/store/photoStore";
+import { photoStore } from "../../../public/store/photoStore";
 import BaseCard from "./BaseCard";
 
 export default function Photography() {

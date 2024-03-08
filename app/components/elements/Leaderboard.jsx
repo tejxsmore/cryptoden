@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { artStore } from "@/public/store/artStore";
-import { gameStore } from "@/public/store/gameStore";
-import { photoStore } from "@/public/store/photoStore";
+import { artStore } from "../../../public/store/artStore";
+import { gameStore } from "../../../public/store/gameStore";
+import { photoStore } from "../../../public/store/photoStore";
 
 export default function Leaderboard({ item }) {
   const { data } =
@@ -24,7 +24,10 @@ export default function Leaderboard({ item }) {
             </div>
             <div className="hidden md:block ">
               <p className="p-5">
-                {dataItem.vol} ETH <span className="text-gray">Volume</span>
+                {dataItem.vol} ETH{" "}
+                <span className="bg-dark px-2.5 p-1.5 ml-2.5 text-xs rounded-md">
+                  Volume
+                </span>
               </p>
             </div>
           </div>

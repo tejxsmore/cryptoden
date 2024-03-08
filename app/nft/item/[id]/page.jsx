@@ -9,10 +9,10 @@ import { FaEthereum } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
-import { itemstore } from "@/public/store/itemstore";
-import { artStore } from "@/public/store/artStore";
-import { gameStore } from "@/public/store/gameStore";
-import { photoStore } from "@/public/store/photoStore";
+import { itemstore } from "../../../../public/store/itemStore";
+import { artStore } from "../../../../public/store/artStore";
+import { gameStore } from "../../../../public/store/gameStore";
+import { photoStore } from "../../../../public/store/photoStore";
 import { useState } from "react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
