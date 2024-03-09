@@ -1,4 +1,4 @@
-export const itemStore = [
+export const itemstore = [
   {
     id: 1001,
     pid: 1,
