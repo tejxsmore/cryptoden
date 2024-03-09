@@ -65,8 +65,8 @@ export default function App() {
           </span>
         </p>
       </div>
-      <Chart coin={coin} />
       <Info coin={data.baseAsset} open={data.openPrice} last={data.lastPrice} />
+      <Chart coin={coin} />
       <div className="lg:flex lg:space-x-5">
         <Converter coin={data.baseAsset} price={data.openPrice} />
         <Depth coin={coin} />

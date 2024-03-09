@@ -14,8 +14,7 @@ export default async function News() {
     }
     const data = await res.json();
     return (
-      <div className="bg-dark text-light min-h-screen p-5">
-        <h2 className="text-md font-medium pb-2.5">Crypto news</h2>
+      <div className="bg-dark text-light min-h-screen p-5 pt-2.5">
         <div className="flex justify-center">
           <div className="max-w-2xl">
             {data.articles.slice(0, 20).map((item) => (
