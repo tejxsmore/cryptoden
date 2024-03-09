@@ -10,7 +10,7 @@ export default function Converter({ coin, price }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const number = document.getElementById("number");
-    const ogPrice = (Number(number.value) * price) / 4491000;
+    const ogPrice = (Number(number.value) * price) / 5767264;
     document.getElementById("state").value = ogPrice.toFixed(3);
   };
 

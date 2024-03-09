@@ -5,7 +5,7 @@ export default function Info({ coin, open, last }) {
   });
 
   return (
-    <div className="flex justify-between pt-5">
+    <div className=" flex justify-between">
       <p className="text-2xl font-bold">
         {coin.toUpperCase()}{" "}
         <span className="text-lg font-medium text-gray"> / INR</span>

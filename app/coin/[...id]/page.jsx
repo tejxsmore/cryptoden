@@ -2,6 +2,7 @@
 import useSWR from "swr";
 import { usePathname } from "next/navigation";
 
+import Chart from "../../components/Chart";
 import Info from "../../components/Info";
 import Converter from "../../components/Converter";
 import Depth from "../../components/Depth";
@@ -64,6 +65,7 @@ export default function App() {
           </span>
         </p>
       </div>
+      <Chart coin={coin} />
       <Info coin={data.baseAsset} open={data.openPrice} last={data.lastPrice} />
       <div className="lg:flex lg:space-x-5">
         <Converter coin={data.baseAsset} price={data.openPrice} />

@@ -62,16 +62,16 @@ function Navbar() {
         <a href="/help">Help</a>
       </div>
 
-      <div className="flex items-center">
+      <div className="p-5 pt-0 flex items-center space-x-5">
         <button
           onClick={() => open()}
-          className={`ml-16 my-5 text-2xl ${
+          className={`sm:ml-16 mt-5 text-2xl ${
             isConnected ? "text-blue" : "text-light"
           }`}
         >
           <IoWallet />
         </button>
-        <button className="m-5 mt-2.5">
+        <button className="mt-2.5">
           <UserButton afterSignOutUrl="/" />
         </button>
       </div>
