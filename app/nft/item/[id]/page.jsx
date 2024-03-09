@@ -9,7 +9,7 @@ import { FaEthereum } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 
-import { itemstore } from "../../../../public/store/itemStore";
+import { itemStore } from "../../../../public/store/itemStore";
 import { artStore } from "../../../../public/store/artStore";
 import { gameStore } from "../../../../public/store/gameStore";
 import { photoStore } from "../../../../public/store/photoStore";
@@ -32,9 +32,9 @@ export default function Item() {
   const path = usePathname();
   const id = path.slice(10) - 1001;
 
-  const img = itemstore[id].img;
-  const price = itemstore[id].price;
-  const pid = itemstore[id].pid - 1;
+  const img = itemStore[id].img;
+  const price = itemStore[id].price;
+  const pid = itemStore[id].pid - 1;
 
   let title = "";
   let link = "";
