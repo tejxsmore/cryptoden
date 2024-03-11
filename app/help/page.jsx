@@ -1,11 +1,15 @@
 "use client";
+import Chat from "../components/Chat";
 import Support from "../components/Support";
 import { AnchorIcon } from "./AnchorIcon";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
+export const runtime = "edge";
+
 export default function Help() {
   return (
     <div className="bg-dark p-5 min-h-screen">
+      <Chat />
       <Support />
       <p className="pb-5 text-md font-medium">
         Frequently asked questions (FAQs)

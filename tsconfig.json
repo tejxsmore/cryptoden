@@ -23,7 +23,9 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/api/contact/route.js"
+    "app/api/contact/route.js",
+    "app/components/Chat.jsx",
+    "app/api/chat/route.js"
   ],
   "exclude": ["node_modules"]
 }
