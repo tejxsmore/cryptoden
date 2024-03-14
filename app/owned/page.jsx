@@ -1,19 +1,19 @@
-async function getData() {
-  try {
-    const res = await fetch("http://localhost:3000/api/nft");
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    const data = await res.json();
-    console.log(data);
-    return data;
-  } catch (e) {
-    console.log("Error : ", e);
-  }
-}
+// async function getData() {
+//   try {
+//     const res = await fetch("http://localhost:3000/api/nft");
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch data");
+//     }
+//     const data = await res.json();
+//     console.log(data);
+//     return data;
+//   } catch (e) {
+//     console.log("Error : ", e);
+//   }
+// }
 
 export default async function Owned() {
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <div className="bg-dark text-light flex justify-center items-center min-h-screen p-5">
