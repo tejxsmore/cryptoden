@@ -2,10 +2,10 @@
 import useSWR from "swr";
 import { usePathname } from "next/navigation";
 
-import Chart from "../../components/Chart";
-import Info from "../../components/Info";
-import Converter from "../../components/Converter";
-import Depth from "../../components/Depth";
+import Chart from "../../components/Coin/Chart";
+import Info from "../../components/Coin/Info";
+import Converter from "../../components/Coin/Converter";
+import Depth from "../../components/Coin/Depth";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 

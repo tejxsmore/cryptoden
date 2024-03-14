@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Leaderboard from "../../components/elements/Leaderboard";
-import Gaming from "../../components/elements/Gaming";
+import Leaderboard from "../../components/NFT/Leaderboard";
+import Gaming from "../../components/NFT/Gaming";
 
 export default function ArtComp() {
   return (

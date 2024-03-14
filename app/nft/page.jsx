@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Art from "../components/elements/Art";
-import Gaming from "../components/elements/Gaming";
-import Photography from "../components/elements/Photography";
+import Art from "../components/NFT/Art";
+import Gaming from "../components/NFT/Gaming";
+import Photography from "../components/NFT/Photography";
 
 export default function Home() {
   return (

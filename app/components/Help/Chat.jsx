@@ -1,6 +1,5 @@
 "use client";
 import { useChat } from "ai/react";
-// ${m.role === "user" ? "text-3xl font-bold" : "text-md font-normal"}
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -26,15 +25,18 @@ export default function Chat() {
 
         <form onSubmit={handleSubmit} className="flex space-x-5">
           <input
+            required
             id="input"
             value={input}
-            placeholder="Typing..."
+            placeholder="What is NFT?"
             onChange={handleInputChange}
             className="p-2 rounded-lg text-light bg-dark border border-gray w-full focus:outline-none"
           />
           <button
             type="submit"
-            className="bg-gray hover:bg-blue p-2 rounded-lg"
+            className={`${
+              input == "" ? "bg-gray" : "bg-blue"
+            } bg-gray hover:bg-blue p-2 rounded-lg`}
           >
             Ask
           </button>

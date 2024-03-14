@@ -6,36 +6,35 @@ export default function Support() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [submit, setSubmit] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let msgData = { name, email, message };
-    console.log(msgData);
+    const formEmail = { name, email, message };
 
     try {
-      const res = await fetch("http://localhost:3000/api/contact", {
+      const response = await fetch("/api/support", {
         method: "POST",
-        body: JSON.stringify(msgData),
+        body: JSON.stringify(formEmail),
         headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
+          "content-type": "application/json",
         },
       });
-      if (res.ok) {
-        console.log("Form submitted");
+      console.log(response);
+
+      if (response.ok) {
+        console.log("Email submitted successfully!");
       } else {
-        console.log("Oops! Something is wrong.");
+        console.error("Failed to submit email.");
       }
-    } catch (e) {
-      console.log(`Error : ${e}`);
-    } finally {
-      setSubmitted(true);
-      // toast.success("Email sent");
-      setName("");
-      setEmail("");
-      setMessage("");
+    } catch (error) {
+      console.error("Error submitting email:", error);
     }
+
+    setSubmit(true);
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
   };
 
   return (
@@ -56,7 +55,7 @@ export default function Support() {
               required
               id="name"
               type="text"
-              placeholder="Name"
+              placeholder={`${submit ? name : "Name"}`}
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -67,7 +66,7 @@ export default function Support() {
               required
               id="email"
               type="email"
-              placeholder="Email"
+              placeholder={`${submit ? email : "Email"}`}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -76,21 +75,22 @@ export default function Support() {
           </div>
           <textarea
             required
-            type="text"
             id="message"
+            type="text"
             rows="10"
-            placeholder="Message"
+            placeholder={`${submit ? message : "Message"}`}
             onChange={(e) => {
               setMessage(e.target.value);
             }}
             className="w-full bg-dark border border-gray rounded-lg p-2 mb-4 focus:outline-none resize-none"
           ></textarea>
           <button
-            type="submit"
-            // onClick={(e) => handleSubmit(e)}
-            className="w-full bg-gray hover:bg-blue text-md font-medium px-5 py-2 rounded-lg"
+            type={`${submit ? "button" : "submit"}`}
+            className={`${
+              submit ? "bg-blue" : "bg-gray hover:bg-blue"
+            } w-full text-md font-medium px-5 py-2 rounded-lg`}
           >
-            Submit
+            {submit ? "Submitted" : "Submit"}
           </button>
         </form>
       </div>

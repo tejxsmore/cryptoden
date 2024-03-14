@@ -13,7 +13,7 @@ export default function Footer() {
         <div className=" md:w-1/3 p-5">
           <h5 className="text-xl font-bold pb-5">Stay connected</h5>
           <p className="text-md font-normal pb-5">
-            {`Subscribe to my newsletter for a daily dose of web content. No spam emails, promise.`}
+            {`Subscribe to our newsletter for a daily dose of web content. No spam emails, promise.`}
           </p>
           <Newsletter />
           <div className="flex gap-x-5">

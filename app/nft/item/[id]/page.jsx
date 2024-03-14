@@ -129,6 +129,17 @@ export default function Item() {
         to: "0xC588503530301B75a9E4B6F787C62dF943130767",
         value: ethers.parseEther(price.toString()),
       });
+
+      const nft = { id, title, img, price };
+      const response = await fetch("/api/owned", {
+        method: "POST",
+        body: JSON.stringify(nft),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      console.log(response);
+
       console.log(`Title : ${title} #${id + 1001}`);
       console.log(`Successfully bought an NFT worth ${price} ETH`);
       toast.success(`Transaction Successful`);
@@ -192,9 +203,19 @@ export default function Item() {
                 </div> */}
               </div>
             </div>
-            <div className="text-sm font-normal">
-              <Toaster position="top-center" reverseOrder={false} />
-            </div>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+              toastOptions={{
+                // Define default options
+                className: "text-sm",
+                duration: 5000,
+                style: {
+                  background: "#191919",
+                  color: "#F4F4F4",
+                },
+              }}
+            />
             <div className="text-light mt-5 p-5 bg-modalGray border border-gray rounded-2xl text-md">
               <p className="pb-4">By {title},</p>
               <p className="text-justify text-md">{description}</p>
