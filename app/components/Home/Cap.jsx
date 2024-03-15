@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { capStore } from "../../public/store/capStore";
+import { capStore } from "../../../public/store/capStore";
 
 import React from "react";
 

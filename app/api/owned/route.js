@@ -4,14 +4,13 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   const data = await request.json();
   const id = data.id;
-  const title = data.title;
+  const pid = data.pid;
   const price = data.price;
-  const image = data.img;
-
-  console.log(id, " : ", title, price);
+  const img = data.img;
+  console.log(data);
 
   try {
-    await sql`INSERT INTO owned (Id, Title, Image, Price) VALUES (${id}, ${title}, ${image}, ${price});`;
+    await sql`INSERT INTO owned (Id, Pid, Img, Price) VALUES (${id}, ${pid}, ${img}, ${price});`;
   } catch (error) {
     console.error("Kuch to gadbad hai bawa : ", error);
   }

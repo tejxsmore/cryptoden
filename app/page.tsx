@@ -1,5 +1,5 @@
-import Ticker from "./components/Ticker";
-import Cap from "./components/Cap";
+import Ticker from "./components/Home/Ticker";
+import Cap from "./components/Home/Cap";
 export default function Home() {
   return (
     <div>

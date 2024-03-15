@@ -65,7 +65,7 @@ function Navbar() {
       <div className="p-5 pt-0 flex items-center space-x-5">
         <button
           onClick={() => open()}
-          className={`sm:ml-16 mt-5 text-2xl ${
+          className={`sm:ml-12 mt-5 text-2xl ${
             isConnected ? "text-blue" : "text-light"
           }`}
         >

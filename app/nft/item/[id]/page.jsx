@@ -130,7 +130,7 @@ export default function Item() {
         value: ethers.parseEther(price.toString()),
       });
 
-      const nft = { id, title, img, price };
+      const nft = { id, pid, img, price };
       const response = await fetch("/api/owned", {
         method: "POST",
         body: JSON.stringify(nft),
