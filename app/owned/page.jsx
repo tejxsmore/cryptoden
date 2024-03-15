@@ -1,8 +1,13 @@
 import { sql } from "@vercel/postgres";
+import { currentUser } from "@clerk/nextjs";
 import Card from "../components/NFT/Card";
 
 export default async function Owned() {
-  const result = await sql`SELECT * FROM owned`;
+  const user = await currentUser();
+  const userId = user?.id;
+
+  const result = await sql`SELECT * FROM owned WHERE Userid=${userId}`;
+
   const nft = result.rows;
   console.log(nft);
 
@@ -13,7 +18,7 @@ export default async function Owned() {
           {nft?.map((item) => (
             <Card
               key={item.id}
-              id={Number(item.id) + 1001}
+              id={item.id}
               pid={item.pid}
               img={item.img}
               price={item.price}

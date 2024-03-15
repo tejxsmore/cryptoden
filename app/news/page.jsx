@@ -18,7 +18,7 @@ export default async function News() {
         <div className="flex justify-center">
           <div className="max-w-2xl">
             {data.articles.slice(0, 20).map((item) => (
-              <a key={item.url} href={item.url}>
+              <a key={item.url} href={item.url} target="_blank">
                 <div className="bg-modalGray border border-gray rounded-xl p-5 mt-2.5 sm:flex">
                   <img
                     src={item.urlToImage}
