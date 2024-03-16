@@ -6,8 +6,8 @@ export default function Chat() {
 
   return (
     <div className="bg-dark flex justify-center pb-20">
-      <div className="w-full sm:max-w-2xl p-5 bg-modalGray border border-gray rounded-xl overflow-y-auto ">
-        <h3 className="pb-5 text-2xl font-bold">Ask anything to our AI</h3>
+      <div className="w-full sm:max-w-2xl p-5 bg-modalGray border border-gray rounded-xl overflow-y-auto">
+        <h3 className="pb-5 text-2xl font-bold">Cryptoden AI</h3>
 
         <ul className={``}>
           {messages.map((m, index) => (

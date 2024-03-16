@@ -17,7 +17,7 @@ function Navbar() {
         <div
           onClick={() => setOpenMenu(!openMenu)}
           id="openModal"
-          className="sm:hidden mr-5 text-3xl cursor-pointer"
+          className="md:hidden mr-5 text-3xl cursor-pointer"
         >
           {!openMenu ? <IoMenu /> : <IoClose />}
         </div>
@@ -27,7 +27,7 @@ function Navbar() {
       </div>
 
       {openMenu && (
-        <div className="flex flex-col p-5 pt-7 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium md:hidden h-screen">
+        <div className="flex flex-col p-5 pt-7 absolute top-16 space-y-2.5 w-full bg-dark text-light text-md font-medium h-screen z-50">
           <a
             href="/nft"
             className="bg-modalGray p-5 rounded-xl border border-gray"
@@ -39,6 +39,12 @@ function Navbar() {
             className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             Owned
+          </a>
+          <a
+            href="/mint"
+            className="bg-modalGray p-5 rounded-xl border border-gray"
+          >
+            Mint
           </a>
           <a
             href="/news"
@@ -55,9 +61,10 @@ function Navbar() {
         </div>
       )}
 
-      <div className="hidden sm:block p-5 space-x-10 text-lg font-medium">
+      <div className="hidden md:block p-5 space-x-10 text-lg font-medium">
         <a href="/nft">NFT</a>
         <a href="/owned">Owned</a>
+        <a href="/mint">Mint</a>
         <a href="/news">News</a>
         <a href="/help">Help</a>
       </div>

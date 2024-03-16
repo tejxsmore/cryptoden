@@ -2,8 +2,6 @@ import { MdOutlineSwapVert } from "react-icons/md";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { LuExternalLink } from "react-icons/lu";
 
-// import Confetti from "react-confetti";
-
 export default function Converter({ coin, price }) {
   const { address, isConnected } = useWeb3ModalAccount();
 
@@ -18,13 +16,7 @@ export default function Converter({ coin, price }) {
   return (
     <div className="lg:w-1/2">
       <h2 className="py-5 text-md font-medium">Converter</h2>
-      {/* {isConnected && (
-        <Confetti
-          numberOfPieces={500}
-          recycle={false}
-          className="w-full h-full"
-        />
-      )} */}
+
       <form
         onSubmit={handleSubmit}
         className="p-5 border border-gray bg-modalGray rounded-lg"

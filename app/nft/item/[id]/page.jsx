@@ -78,10 +78,6 @@ export default function Item() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // setTime.seconds(seconds);
-    // setTime.minutes(minutes);
-    // setTime.days(days);
-
     setTime({
       seconds: seconds,
       minutes: minutes,
