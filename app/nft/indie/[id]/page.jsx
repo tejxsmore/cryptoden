@@ -43,6 +43,7 @@ export default function Indie() {
   }, []);
 
   const img = indie[id]?.img;
+  const pid = 11;
   const recieverAddress = indie[id]?.address;
   const price = indie[id]?.price;
   const title = indie[id]?.title;
