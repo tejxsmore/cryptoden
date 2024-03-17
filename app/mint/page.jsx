@@ -16,13 +16,11 @@ export default function Mint() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setModal(true);
-    console.log(title, img, address, price, description);
   };
 
   const confirmSubmit = async (e) => {
     e.preventDefault();
     const nftData = { title, img, address, price, description };
-    console.log(nftData);
     try {
       const response = await fetch("/api/mint", {
         method: "POST",
@@ -45,7 +43,11 @@ export default function Mint() {
   };
 
   return (
-    <div className="p-5 bg-dark flex justify-center min-h-screen">
+    <div
+      className={`${
+        modal ? "mb-80 md:mb-0 lg:mb-0" : "mb-0"
+      } p-5 bg-dark flex justify-center min-h-screen`}
+    >
       {submit && (
         <Confetti
           numberOfPieces={500}
@@ -100,10 +102,11 @@ export default function Mint() {
           type="text"
           id="description"
           minLength={20}
+          columns="15"
           rows="8"
           placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
-          className="p-2 rounded-lg text-light bg-dark border border-gray w-full focus:outline-none resize-none truncate overflow-hidden"
+          className="w-full bg-dark border border-gray rounded-lg p-2 mb-4 focus:outline-none resize-none"
         />
         <button
           type="submit"
@@ -125,7 +128,7 @@ export default function Mint() {
                   <FaEthereum className="text-light text-lg" />
                 </div>
 
-                <img src={img} alt={price} className="rounded-b-lg" />
+                <img src={img} alt={price} className="rounded-b-lg w-full" />
               </div>
               <div className="sm:w-1/2 flex flex-col space-y-5">
                 <h3 className="text-2xl font-bold">{title}</h3>
@@ -133,7 +136,7 @@ export default function Mint() {
                   {Math.trunc(price)} ETH
                 </h4>
                 <p className="bg-modalGray border border-gray p-2 h-full rounded-lg">
-                  {description}
+                  {description.slice(0, 200)}...
                 </p>
               </div>
             </div>

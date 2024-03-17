@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { photoStore } from "../../../../public/store/photoStore";
 import Card from "../../../components/NFT/Card";
 
-export default function ArtId() {
+export default function PhotoId() {
   const path = usePathname();
   const id = Number(path.slice(11));
   const photopiece = photoStore.data[id].subitems;

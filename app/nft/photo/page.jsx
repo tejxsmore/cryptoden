@@ -2,7 +2,7 @@ import Link from "next/link";
 import Leaderboard from "../../components/NFT/Leaderboard";
 import Photography from "../../components/NFT/Photography";
 
-export default function ArtComp() {
+export default function PhotoComp() {
   return (
     <div className="pt-5 min-h-screen bg-dark">
       <Leaderboard item="photo" />

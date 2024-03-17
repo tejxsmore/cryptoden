@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { gameStore } from "../../../../public/store/gameStore";
 import Card from "../../../components/NFT/Card";
 
-export default function ArtId() {
+export default function GameId() {
   const path = usePathname();
   const id = Number(path.slice(10));
   const gamepiece = gameStore.data[id].subitems;
