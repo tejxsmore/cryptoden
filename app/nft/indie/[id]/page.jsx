@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 const ethers = require("ethers");
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import useSWR from "swr";
 import { usePathname } from "next/navigation";
@@ -13,7 +13,6 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Indie() {
   const { address, isConnected } = useWeb3ModalAccount();
-  const [indie, setIndie] = useState({});
   const [time, setTime] = useState({
     seconds: 0,
     minutes: 0,
@@ -27,27 +26,14 @@ export default function Indie() {
   const path = usePathname();
   const id = path.slice(11) - 2001;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/indie");
-        const jsonData = await response.json();
-        setIndie(jsonData.rows);
-        console.log(jsonData.rows);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const { data: indie } = useSWR("/api/indie", fetcher);
 
-    fetchData();
-  }, []);
-
-  const img = indie[id]?.img;
+  const img = indie?.rows[id]?.img;
   const pid = 11;
-  const recieverAddress = indie[id]?.address;
-  const price = indie[id]?.price;
-  const title = indie[id]?.title;
-  const description = indie[id]?.description;
+  const recieverAddress = indie?.rows[id]?.address;
+  const price = indie?.rows[id]?.price;
+  const title = indie?.rows[id]?.title;
+  const description = indie?.rows[id]?.description;
 
   const inr = data ? price * Number(data.openPrice) : price * 219815;
   let INRupee = new Intl.NumberFormat("en-IN", {
