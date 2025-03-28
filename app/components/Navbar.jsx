@@ -33,8 +33,7 @@ function Navbar() {
             className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             NFT
-          </a>
-{/*           <a
+          </a>           <a
             href="/owned"
             className="bg-modalGray p-5 rounded-xl border border-gray"
           >
@@ -57,16 +56,16 @@ function Navbar() {
             className="bg-modalGray p-5 rounded-xl border border-gray"
           >
             Help
-          </a> */}
+          </a>
         </div>
       )}
 
       <div className="hidden md:block p-5 space-x-10 text-lg font-medium">
         <a href="/nft">NFT</a>
-{/*         <a href="/owned">Owned</a>
+        <a href="/owned">Owned</a>
         <a href="/mint">Mint</a>
         <a href="/news">News</a>
-        <a href="/help">Help</a> */}
+        <a href="/help">Help</a>
       </div>
 
       <div className="p-5 pt-0 flex items-center space-x-5">
